@@ -60,11 +60,11 @@
             #define lock_internal_spin_unlock_with_notify( lock, save )    vPortLockInternalSpinUnlockWithNotify( lock, save );
         #endif
 
-        #ifndef lock_internal_spin_unlock_with_best_effort_wait_or_timeout
-            extern bool xPortLockInternalSpinUnlockWithBestEffortWaitOrTimeout( struct lock_core * pxLock,
+        #ifndef lock_internal_spin_unlock_with_best_effort_wait_or_timeout_rtos
+            extern bool xPortLockInternalSpinUnlockWithBestEffortWaitOrTimeoutRTOS( struct lock_core * pxLock,
                                                                                 uint32_t ulSave,
                                                                                 absolute_time_t uxUntil );
-            #define lock_internal_spin_unlock_with_best_effort_wait_or_timeout( lock, save, until ) \
+            #define lock_internal_spin_unlock_with_best_effort_wait_or_timeout_rtos( lock, save, until ) \
     xPortLockInternalSpinUnlockWithBestEffortWaitOrTimeout( lock, save, until )
         #endif
     #endif /* configSUPPORT_PICO_SYNC_INTEROP */
